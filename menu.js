@@ -1,7 +1,7 @@
 const menu = [
     {
         id: 1,
-        title: "Toast With Sunny Side Egg",
+        title: "Toast Sunny Egg",
         category: "breakfast",
         price: 10,
         img: "images/breakfast/bread-with-sunny-side-up-egg.jpg",
@@ -17,7 +17,7 @@ const menu = [
     },
     {
         id: 3,
-        title: "Toast With Fried Egg",
+        title: "Toast Fried Egg",
         category: "breakfast",
         price: 12,
         img: "images/breakfast/toasted-bread-with-fried-egg.jpg",
@@ -69,7 +69,53 @@ const menu = [
         category: "shakes",
         price: 13,
         img: "images/shakes/Red-Respberries.jpg",
-        desc: "Red raspberries are a common and important fruit in the Western diet due to their content of essential nutrients and beneficial phytochemicals. Anthocyanins and ellagitannins are polyphenolic compounds and the major antioxidant phytochemicals present in raspberries."
+        desc: "Red raspberries are a common and important fruit in the Western diet due to their content of essential nutrients and beneficial phytochemicals."
     },
 ]
 
+const menuItems = document.querySelector(".container");
+
+const allBtns = document.querySelectorAll(".btn");
+
+window.addEventListener("DOMContentLoaded", function(){
+    displayMenuItems(menu);
+    
+});
+
+function displayMenuItems(Items){
+    let displayMenu = Items.map(function(item){
+        return `<article class="menu-item">
+        <img src=${item.img} class="image" alt=${item.title} />
+        <div class="menu-info">
+            <header>
+                <h4>${item.title}</h4>
+                <h4 class="price">$${item.price}</h4>
+            </header>
+            <div class="menu-text">${item.desc}</div>
+        </div>
+    </article>`;
+    });
+
+    displayMenu = displayMenu.join("");
+
+    menuItems.innerHTML = displayMenu;
+}
+
+allBtns.forEach(function (btn) {
+    btn.addEventListener('click', function(e){
+        const category = e.currentTarget.dataset.name;
+console.log(category);
+        const menuCategory = menu.filter(function(categoryItem) {
+            if(categoryItem.category === category){
+                return categoryItem;
+            }
+        });
+
+        if(category === "all"){
+            displayMenuItems(menu)
+        }
+        else{
+            displayMenuItems(menuCategory);
+        }
+    })
+})
