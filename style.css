@@ -84,3 +84,21 @@
     font-size: 12px;
     padding-top: 10px;
 }
+
+@media screen and (max-width: 425px) {
+    .btns{
+        margin: 5px;
+    }
+    .btn {
+        padding: 6px;
+    }
+    .container {
+        display: inline-grid;
+        grid-template-columns: auto;
+        gap: 5px;
+        justify-content: center;
+        place-items: center;
+        width: 90vw;
+        margin: 10px 5px;
+    }
+}
