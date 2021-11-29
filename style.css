@@ -7,7 +7,7 @@
 }
 
 .menu {
-    padding: 2rem 0;
+    padding: 32px 0;
 }
 
 .title {
@@ -20,4 +20,29 @@
     background: #c59d5f;
     height: 4px;
     margin-top: 5px;
+}
+
+.btns {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.btn {
+    background: transparent;
+    border: 1px solid #c59d5f;
+    text-decoration: capitalize;
+    font-size: 16px;
+    margin: 0 8px;
+    letter-spacing: 1px;
+    border-radius: 8px;
+    padding: 6px 12px;
+    color: #c59d5f;
+    cursor: pointer;
+    transition: all 0.3s linear;
+}
+
+.btn:hover {
+    background: #c59d5f;
+    color: white;
 }
