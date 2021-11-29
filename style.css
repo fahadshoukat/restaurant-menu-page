@@ -1,0 +1,23 @@
+*,
+::before,
+::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.menu {
+    padding: 2rem 0;
+}
+
+.title {
+    text-align: center;
+}
+
+.underline {
+    width: 50px;
+    margin: auto;
+    background: #c59d5f;
+    height: 4px;
+    margin-top: 5px;
+}
